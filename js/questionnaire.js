@@ -539,18 +539,27 @@ function showAll() {
     // LOCAL VARIABLE TO DISPLAY ALL FRATS AND HANDLE MAGIC NUMBER
     var org_name_2 = $('#explore'), container;
 
-    // LOOP TO DISPLAY ALL FRATS
-    for (var index = 0; index < frats.length; index++) {
-        // CREATE CONTAINER IN HTML
-        container = $('<div id="frat_2" class="container"></div>');
+    if (resultsPage.length == 0) {
+        container = $('<div id="no_results" class="container"></div>');
 
-        // APPEND CONTAINER TO ORG_NAME_2, WHICH DEALS WITH THE 'EXPLORE' ID
         org_name_2.append(container);
+        container.append('<div class="text">');
+        container.append('<p>You have no events. Click on Take Questionnaire to see which Greek organizations best align with your personal attributes.</p>');
+        container.append('<form action="questionnaire_new_user.html"><div class="questionnaire-button"><button type="submit" class="questionnairebtn">Take Questionnaire</button></div></form>');
 
-        // APPEND FRAT NAME AND MATCH PERCENTAGE TO CONTAINER TO BE DISPLAYED ON EXPLORE PAGE
-        container.append('<div class="name">' + resultsPage[index].fratName +'</div>');
-        container.append('<div class="match_percentage">' + "Match Percentage: " + resultsPage[index].matchPercent + "%" + '</div>');
-        container.append('<a href="' + resultsPage[index].homepage + '"> Visit Fraternity Page' + '</a>');
+    } else {
+
+        for (var index = 0; index < frats.length; index++) {
+
+            container = $('<div id="frat_2" class="container"></div>');
+
+            org_name_2.append(container);
+
+            container.append('<div class="name">' + resultsPage[index].fratName +'</div>');
+            container.append('<div class="match_percentage">' + "Match Percentage: " + resultsPage[index].matchPercent + "%" + '</div>');
+
+            container.append('<a href="' + resultsPage[index].homepage + '"> Visit Fraternity Page' + '</a>');
+        }
     }
 }
 
