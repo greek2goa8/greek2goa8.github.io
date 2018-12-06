@@ -9,6 +9,18 @@ for (var user in profiles) {
   }
 }
 
+var btn = document.getElementById("delete_event");
+var prev = document.getElementById("prev");
+var next = document.getElementById("next");
+
+if (events_to_display.length <= 1) {
+  if (events_to_display.length == 0) {
+    btn.style.display = "none";
+  }
+  prev.style.display = "none";
+  next.style.display = "none";
+}
+
 //SORT CAROUSEL EVENTS
 var sort_events = events_to_display.sort(function(a, b) {return b - a});
 var sorted_events = sort_events.sort(comparator);
@@ -31,12 +43,14 @@ function comparator(a, b) {
 }
 
 if (events_to_display.length == 0) {
-  container = $('<div id="mySlides" class="carousel_container"></div>');
+  
+  container = $('<div id="mySlides" class="carousel_container id="default_pic"></div>');
   events_carousel.append(container);
 
-  container.append('<img src="images/stopbanner.png" style=width"100%">');
+  container.append('<img src="images/greek2gofinalfinalBversion.png" style=height"100%" width="auto">');
   container.append('<div class="text">');
-  container.append('<h2>You have no events. Add events by checking the Explore page or taking the questionnaire, both of which can be found in Menu.</h2>');
+  container.append('<h2>You have no events added to your carousel. To add events, click on Explore Fraternities to explore the fraternities and their events.</h2>');
+  container.append('<form action="explore.html"><button type="submit" class="questionnairebtn">Explore Fraternities</button></form>');
 
 } else {
 
