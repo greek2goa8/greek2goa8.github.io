@@ -5,13 +5,12 @@
 
 /* BODY CSS */
 body {
-     /*background-image:  url("../images/geisellib.png");*/
-     background-color: #182B49;
-     background-repeat: no-repeat;
-     background-size: 100% 100%;
-     padding: 0px; /* NOTE: Causing elements to display lower than needed */
-     text-align: center;
-     color: white;
+  background-color: #182B49;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0px; /* NOTE: Causing elements to display lower than needed */
+  text-align: center;
+  color: white;
 }
 
 #backbtn {
@@ -104,7 +103,7 @@ button:hover {
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn {
   float: center;
-  width: 50%;
+  width: 100%;
 }
 
 /* Add padding to container elements */
@@ -190,46 +189,53 @@ i {
   background-color: #005e93;
   width: 7%;
 }
-.academics-number-button:focus{
+/*.academics-number-button:focus {
   background-color: green;
 }
-
+*/
 
 .athletics-number-button {
   background-color: #005e93;
   width: 7%;
 }
-.athletics-number-button:focus {
+/*.athletics-number-button:focus {
   background-color: green;
 }
-
+*/
 
 .leadership-number-button {
   background-color: #005e93;
   width: 7%;
 }
-.leadership-number-button:focus {
+/*.leadership-number-button:focus {
   background-color: green;
 }
-
+*/
 
 .social-number-button {
   background-color: #005e93;
   width: 7%;
 }
-.social-number-button:focus {
+/*.social-number-button:focus {
   background-color: green;
 }
-
+*/
 
 .philanthropy-number-button {
   background-color: #005e93;
   width: 7%;
 }
-.philanthropy-number-button:focus {
+/*.philanthropy-number-button:focus {
   background-color: green;
 }
+*/
+.number-buttons {
+/*  vertical-align: center;
+*/}
 
+.selected {
+  background-color: green;
+}
 
 
 /* ORGANIZAITON/FRATERNITY BUTTON */
@@ -241,20 +247,29 @@ i {
 /* SUBMIT BUTTON CSS */
 .submitbtn {
   background-color: #005e93;
-  width: 10%;
+  width: 7%;
 }
 
 /* SUBMIT BUTTON DISABLED CSS */
 .submitbtn:disabled,
 .submitbtn[disabled]{
   background-color: #cccccc;
+  width: 7%;
+}
+
+/* SUBMIT BUTTON DISABLED CSS */
+/*.submitbtn:disabled:hover,
+.submitbtn[disabled]{
+  background-color: #cccccc;
   width: 10%;
 }
+*/
 
 .attribute .submitbtn:disabled,
 .submitbtn[disabled]{
-  color: black;
+  color: darkgray;
   font-weight: bold;
+  cursor: default;
 }
 
 
@@ -362,11 +377,23 @@ i {
     background-color: #444;
 }
 
-/* MAIN ID CSS*/
+/* MAIN ID CSS */
 #main {
     transition: margin-left .5s;
     padding: 1px;
     text-align: left;
+    z-index: 10;
+}
+
+.backbtn {
+  text-size: 50px;
+  width: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 5px;
+  border: none;
 }
 
 #explore a {
@@ -385,13 +412,14 @@ i {
 }
 
 #frat_1 {
-  display: inline-table;
-  width: 20%;
-  border-radius: 30px;
+  /*display: inline-table;*/
+  width: 100%;
+  /*border-radius: 30px;*/
+  padding: 15px;
 }
 
 #temp {
-  padding: 20px;
+  /* padding: 20px; */
   border-spacing: 20px;
 }
 #temp a {
@@ -445,4 +473,79 @@ div .sidelogo{
 #fratpng{
   width: 250px;
   height: 123px;
+}
+
+/* Split the screen in half */
+.split {
+  /* height: 50%; */
+  width: 50%;
+  position: fixed;
+/*  
+  z-index: 99;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+*/
+}
+
+/* Control the left side */
+.on_left {
+  height: 45%;
+  left: 0;
+}
+
+/* Control the right side */
+.on_right {
+  height: 30%;
+  right: 0;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+/* Split the screen in half */
+.split {
+  width: 60%;
+  position: fixed;
+}
+
+/* Split the screen in half */
+.split_returninguser_left {
+  width: 60%;
+  position: fixed;
+  height: 44%;
+  left: 0;
+}
+
+/* Split the screen in half */
+.split_returninguser_right {
+  width: 60%;
+  position: fixed;
+  height: 55%;
+  right: 0;
+}
+
+.frat_desc {
+  width: 60%;
+  margin: auto;
+}
+
+hr {
+  width: 80%;
+}
+
+.frat_img {
+  padding: 20px;
 }
