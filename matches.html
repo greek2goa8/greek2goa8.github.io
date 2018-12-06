@@ -9,13 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
+  <div>
+    <a href="events.html">
+      <img src="images/greek2gofinalfinalBversion.png" alt="g2glogo" style="float:right;width:111px;height:84px;">
+    </a>
+  </div>
+
   <!-- NOTE: Menu & Back Buttons moved outside of body -->
   <div id="main">
     <button class="openbtn" onclick="openNav()">☰ Menu</button>
     <button class="openbtn" onclick="goBack()">Go Back</button>
   </div>
 
-  <body>
+  <body onload="showResults()">
     <div class="container">
       <h1>Matches</h1>
       <div id="mySidebar" class="sidebar">
@@ -30,8 +36,7 @@
         <a href="home.html"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
       </div>
 
-      <hr>
-
+      <!-- <hr> -->
       <div id="temp"></div>
 
       <form action="events.html">
