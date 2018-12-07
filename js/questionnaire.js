@@ -544,8 +544,8 @@ function showAll() {
 
         org_name_2.append(container);
         container.append('<div class="text">');
-        container.append('<p>You have no events. Click on Take Questionnaire to see which Greek organizations best align with your personal attributes.</p>');
-        container.append('<form action="questionnaire_new_user.html"><div class="questionnaire-button"><button type="submit" class="questionnairebtn">Take Questionnaire</button></div></form>');
+        container.append('<p>You have no events in your carousel. Click on Go to Questionnaire Hub to read about the questionnaire and matching process and take the questionnaire.</p>');
+        container.append('<form action="questionnaire_hub.html"><div class="questionnaire-button"><button type="submit" class="questionnairebtn">Go to Questionnaire Hub</button></div></form>');
 
     } else {
 
